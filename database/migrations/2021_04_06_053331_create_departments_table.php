@@ -1,10 +1,8 @@
 <?php
-namespace App\Models;
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use DB;
-use Illuminate\Support\Facades\DB as FacadesDB;
 
 class CreateDepartmentsTable extends Migration
 {
@@ -16,9 +14,8 @@ class CreateDepartmentsTable extends Migration
     public function up()
     {
         Schema::create('departments', function (Blueprint $table) {
-            $table->id();
+            $table->bigInteger('deptId')->unique();
             $table->string('departmentName');
-            $table->string('deptId')->unique();
             $table->string('HOD');
             $table->timestamps();
         });

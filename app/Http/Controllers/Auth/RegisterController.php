@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Console\Input\Input;
 class RegisterController extends Controller
 {
     /*
@@ -56,7 +57,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'mobileNumber'=> ['required','digits:10'],
-            'profilePic'=>"required|file|image|mimes:jpg,psd,ai,png,jpeg|max:5000 "
+            'profilePic'=>['required','file','image','mimes:jpg,psd,ai,png,jpeg|max:5000' ]
 
         ]);
     }
@@ -69,20 +70,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        //Validator::make($data,['profilePic'=>"required|file|image|mimes:jpg,psd,ai,png,jpeg|max:5000 "])->validate(),
+        $ext= $data['profilePic']->getClientOriginalExtension();
+        $imageName = time().'.'.$ext;
+        $imageEncoded=File::get($data['profilePic']);
+        Storage::disk('local')->put('public/'.$imageName,$imageEncoded);
+        $url= Storage::url($imageName);
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'password' => $data['password'],//Hash::make(
-            'lastName' => $data['lastName'],
-            'username' => $data['username'],
-            'gender' => $data['gender'],
-            'address' => $data['address'],
-            'mobileNumber' => $data['mobileNumber'],
+
             'dob' => $data['dob'],
             'deptId' => $data['deptId'],
             'roleId' => $data['roleId'],
-            //Validator::make($data,['profilePic'=>"required|file|image|mimes:jpg,psd,ai,png,jpeg|max:5000 "])->validate(),
-            $ext= $data['file']('profilePic')->getClientOriginalExtension(), //jpg ,png..
+            $ext= $data['profilePic']->getClientOriginalExtension(),
             $imageName = time().'.'.$ext,
             $imageEncoded=File::get($data['profilePic']),
             Storage::disk('local')->put('public/'.$imageName,$imageEncoded),

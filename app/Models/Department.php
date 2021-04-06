@@ -10,9 +10,9 @@ class Department extends Model
     use HasFactory;
     protected $table = 'departments';
     protected $fillable = [
-        'departmentName',
         'deptId',
-        'HOD'
+        'departmentName',
+        'HOD',
     ];
     public $timestamps = True;
 }
