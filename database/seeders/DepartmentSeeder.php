@@ -16,11 +16,11 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-        
+
         DB::table('departments')->insert([
-            'deptId' => 4000,
-            'departmentName' => "Web development",
-            'HOD' => "Don Magloire",
+            'deptId' => 7000,
+            'departmentName' => "Management",
+            'HOD' => "Esther KELY",
         ]);
     }
 }

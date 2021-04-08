@@ -33,14 +33,12 @@ Route::get('all-Hod', function(){
     return view ('admin.allHod');
 });
 
-Route::get('all-Employees', function(){
-    return view ('admin.allEmployees');
-});
-
-Route::get('add-Department', function(){
+Route::get('all-Employees',[App\Http\Controllers\UserController::class,'getEmployees']);
+Route::get('all-Department',[App\Http\Controllers\DepartmentController::class,'getDepartments']);
+ Route::get('add-Department', function(){
     return view('admin.addDepartment');
 });
 
-Route::get('all-Department', function(){
+/* Route::get('all-Department', function(){
     return view('admin.allDepartment');
-});
+}); */

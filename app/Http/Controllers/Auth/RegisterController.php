@@ -80,7 +80,12 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-
+            'password' =>Hash::make($data['password']),
+            'lastName' => $data['lastName'],
+            'username' => $data['username'],
+            'gender' => $data['gender'],
+            'address' => $data['address'],
+            'mobileNumber' => $data['mobileNumber'],
             'dob' => $data['dob'],
             'deptId' => $data['deptId'],
             'roleId' => $data['roleId'],
@@ -88,7 +93,6 @@ class RegisterController extends Controller
             $imageName = time().'.'.$ext,
             $imageEncoded=File::get($data['profilePic']),
             Storage::disk('local')->put('public/'.$imageName,$imageEncoded),
-            $url= Storage::url($imageName),
             'profilePic'=>$imageName,
         ]);
     }
