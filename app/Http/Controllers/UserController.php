@@ -20,4 +20,14 @@ class UserController extends Controller
         ->get();
         return view('admin.allHod',['hod'=>$hod]);
     }
+    /* Get the total number of employees in web development */
+    public function webDevDetails(){
+        $webGraph=DB::table('users')->where('deptId',4000)->get()->count();
+        $webMen=DB::table('users')
+                ->where('deptId',4000)
+                ->where('gender','Male')
+                ->get()->count();
+        $percentageValue=$webMen/$webGraph;
+        return view('admin.adminHome',['webMen'=>$webMen]);
+    }
 }

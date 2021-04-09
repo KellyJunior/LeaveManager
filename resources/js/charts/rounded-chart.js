@@ -1,6 +1,6 @@
 (function ($) {
  "use strict";
- 
+
 	 /*----------------------------------------*/
 	/*  1.  pie Chart
 	/*----------------------------------------*/
@@ -8,7 +8,7 @@
 	var piechart = new Chart(ctx, {
 		type: 'pie',
 		data: {
-			labels: ["Red", "Orange", "Yellow", "Green", "Blue"],
+			labels: ["Men", "Women", "Yellow", "Green", "Blue"],
 			datasets: [{
 				label: 'pie Chart',
                 backgroundColor: [
@@ -18,7 +18,7 @@
 					'#D80027',
 					'#006DF0'
 				],
-				data: [10, 20, 30, 40, 60]
+				data: [50, 20, 30, 40, 60]
             }]
 		},
 		options: {
@@ -43,7 +43,7 @@
 					'#D80027',
 					'#006DF0'
 				],
-				
+
             }]
 		},
 		options: {
@@ -67,7 +67,7 @@
             }
         }
 	});
-	
+
 	 /*----------------------------------------*/
 	/*  3.  radar Chart
 	/*----------------------------------------*/
@@ -82,14 +82,14 @@
                 backgroundColor: '#006DF0',
                 borderColor: '#006DF0',
                 pointBackgroundColor: '#ff0000',
-				
+
             },{
 				label: "My Second dataset",
 				data: [50, 20, 10, 30, 90],
                 backgroundColor: '#933EC5',
                 borderColor: '#933EC5',
                 pointBackgroundColor: '#ff0000',
-				
+
             }]
 		},
 		options: {
@@ -119,7 +119,7 @@
 				label: 'Dataset 1',
 				data: [10, 20, 30, 40, 90],
                 backgroundColor: '#006DF0'
-				
+
             }]
 		},
 		options: {
@@ -137,9 +137,9 @@
             }
         }
 	});
-	
-	
 
-	 
-		
-})(jQuery); 
+
+
+
+
+})(jQuery);

@@ -61,6 +61,10 @@
     <!-- modernizr JS
 		============================================ -->
     <script src="{{asset('js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+
+
+    
 </head>
 
 <body>
@@ -152,7 +156,7 @@
     <!-- plugins JS
 		============================================ -->
     <script src="{{asset('js/plugins.js')}}"></script>
-    
+
     <!-- main JS
 		============================================ -->
     <script src="{{asset('js/main.js')}}"></script>
@@ -186,7 +190,10 @@
         <!-- tab JS
             ============================================ -->
         <script src="{{asset('js/tab.js')}}"></script>
-
+         <!-- Charts JS
+		============================================ -->
+    <script src="{{asset('js/charts/Chart.js')}}"></script>
+    <script src="{{asset('js/charts/rounded-chart.js')}}"></script>
 </body>
 
 </html>

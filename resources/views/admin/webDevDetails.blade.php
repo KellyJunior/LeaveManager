@@ -3,149 +3,89 @@
 
 
 @section('pageContent')
-<!-- Small chart Start-->
-<div class="sparkline-area">
+<script>
+    window.onload = function() {
+
+    var chart = new CanvasJS.Chart("chartContainer", {
+        theme: "light2", // "light1", "light2", "dark1", "dark2"
+        exportEnabled: true,
+        animationEnabled: true,
+        title: {
+            text: "Graphical Details about Web development Department"
+        },
+        data: [{
+            type: "pie",
+            startAngle: 25,
+            toolTipContent: "<b>{label}</b>: {y}%",
+            showInLegend: "true",
+            legendText: "{label}",
+            indexLabelFontSize: 16,
+            indexLabel: "{label} - {y}%",
+            dataPoints: [
+                { y: <?php
+                    $webGraph=DB::table('users')->where('deptId',4000)->get()->count();
+                    $webMen=DB::table('users')
+                    ->where('deptId',4000)
+                    ->where('gender','Male')
+                    ->get()->count();
+                    $percentageValue=$webMen/$webGraph;
+                    echo($webMen) ?>, label: "Men" },
+
+                { y: <?php
+                    $webWomen=DB::table('users')
+                    ->where('deptId',4000)
+                    ->where('gender','Female')
+                    ->get()->count();
+                    echo $webWomen;
+                     ?>, label: "Women" },
+                { y: 10.62, label: "Requested Leave" },
+                { y: 5.02, label: "Leave on hold" },
+                { y: 4.07, label: "Accepted Leave" },
+                { y: 1.22, label: "Refused Leave" },
+                { y: 0.44, label: "Over enterprise Employees" }
+            ]
+        }]
+    });
+    chart.render();
+
+    }
+    </script>
+
+
+<!-- Charts Start-->
+<div class="charts-area mg-b-15">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="about-sparkline responsive-mg-b-30">
-                    <div class="sparkline-hd">
-                        <div class="main-spark-hd">
-                            <h1>Sparkline </h1>
-                        </div>
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="charts-single-pro mg-t-30">
+                    <div class="alert-title">
+                        <h2>Radar Chart</h2>
+                        <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
                     </div>
-                    <div class="sparkline-content">
-                        <p>This jQuery plugin generates sparklines (small inline charts) directly in the browser using data supplied either inline in the HTML, or via javascript.You need to include both on your page to generate sparklines.</p>
-                        <p>The plugin is compatible with most modern browsers and has been tested with <span class="table-dis-n-pro dk-res-t-d-n">Firefox 2+, Safari 3+, Opera 9, Google Chrome and Internet Explorer 6, 7, 8, 9 & 10 as well as Android.</span></p>
-                        <a target="_blank" href="https://omnipotent.net/jquery.sparkline/#s-about">Read More</a>
+                    <div id="radar-chart">
+                        <canvas id="radarchart"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                <div class="sparkline-list">
-                    <div class="smart-sparkline-hd">
-                        <div class="smart-main-spark-hd">
-                            <h1>Smart Sparkline javascript</h1>
-                        </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="charts-single-pro mg-t-30">
+                    <div class="alert-title">
+                        <h2>Doughnut Chart</h2>
+                        <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
                     </div>
-                    <div class="smart-sparkline-list">
-                        <table class="table table-bordered table-edu">
-                            <thead>
-                                <tr>
-                                    <th>Graph</th>
-                                    <th>Type</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <span id="sparkline1"></span>
-                                    </td>
-                                    <td>
-                                        Inline line chart
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span id="sparkline2"></span>
-                                    </td>
-                                    <td>
-                                        Bar chart
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span class="sparklineedu"></span>
-                                    </td>
-                                    <td>
-                                        Bar chart Positive
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span id="sparkline3"></span>
-                                    </td>
-                                    <td>
-                                        Pie chart
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span id="sparkline4"></span>
-                                    </td>
-                                    <td>
-                                        Long inline chart
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span id="sparkline5"></span>
-                                    </td>
-                                    <td>
-                                        Tristate chart
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <span id="sparkline6"></span>
-                                    </td>
-                                    <td>
-                                        Discrete chart
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div id="doughnut-chart">
+                        <canvas id="Doughnutchart"></canvas>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Small chart end-->
-<!-- custom chart start-->
-<div class="pie-bar-line-area mg-t-30 mg-b-15">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="sparkline7-list responsive-mg-b-30">
-                    <div class="sparkline7-hd">
-                        <div class="main-spark7-hd">
-                            <h1>Pie Big size Example</h1>
-                        </div>
-                    </div>
-                    <div class="sparkline7-graph">
-                        <span id="sparkline7"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="sparkline8-list responsive-mg-b-30">
-                    <div class="sparkline8-hd">
-                        <div class="main-sparkline8-hd">
-                            <h1>Bar Big size Example</h1>
-                        </div>
-                    </div>
-                    <div class="sparkline8-graph">
-                        <span id="sparkline8"></span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                <div class="sparkline9-list">
-                    <div class="sparkline9-hd">
-                        <div class="main-sparkline9-hd">
-                            <h1>Bar Big size Example</h1>
-                        </div>
-                    </div>
-                    <div class="sparkline9-graph">
-                        <span id="sparkline9"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- custom chart end-->
+<!-- Charts End-->
 
 
 
