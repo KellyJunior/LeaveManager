@@ -29,16 +29,14 @@ Route::get('adminAnalytics', function(){
     return view('admin.graphAnalytics');
 })->name('adminAnalytics');
 
-Route::get('all-Hod', function(){
-    return view ('admin.allHod');
-});
-
+Route::get('all-Hod',[App\Http\Controllers\UserController::class,'getHod']);
 Route::get('all-Employees',[App\Http\Controllers\UserController::class,'getEmployees']);
 Route::get('all-Department',[App\Http\Controllers\DepartmentController::class,'getDepartments']);
  Route::get('add-Department', function(){
     return view('admin.addDepartment');
 });
 
-/* Route::get('all-Department', function(){
-    return view('admin.allDepartment');
-}); */
+
+
+/*get Details about departments of the enterprises */
+Route::get('webDev',[App\Http\Controllers\DepartmentController::class,'webDevDetails']);

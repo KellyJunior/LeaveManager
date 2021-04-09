@@ -54,6 +54,14 @@
                             <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">New Request </span></a></li>
                         </ul>
                     </li>
+
+                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">web development</span></a></li>
+                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">Mobile development</span></a></li>
+                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">Management-Marketing </span></a></li>
+                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">Artificial Intelligence</span></a></li>
+
+
+
                     {{-- <li>
                         <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
                         <ul class="submenu-angle" aria-expanded="false">

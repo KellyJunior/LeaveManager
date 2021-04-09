@@ -130,6 +130,10 @@
 		============================================ -->
     <script src="{{asset('js/metisMenu/metisMenu.min.js')}}"></script>
     <script src="{{asset('js/metisMenu/metisMenu-active.js')}}"></script>
+        <!-- sparkline JS
+            ============================================ -->
+        <script src="{{asset('js/sparkline/jquery.sparkline.min.js')}}"></script>
+        <script src="{{asset('js/sparkline/sparkline-active.js')}}"></script>
     <!-- morrisjs JS
 		============================================ -->
     <script src="{{asset('js/morrisjs/raphael-min.js')}}"></script>
@@ -148,6 +152,7 @@
     <!-- plugins JS
 		============================================ -->
     <script src="{{asset('js/plugins.js')}}"></script>
+    
     <!-- main JS
 		============================================ -->
     <script src="{{asset('js/main.js')}}"></script>

@@ -13,4 +13,11 @@ class UserController extends Controller
         $allEmployees=DB::table('users')->where('roleId',3)->get();
         return view('admin.allEmployees',['allEmployees'=>$allEmployees]);
     }
+    public function getHod(){
+        $hod= DB::table('users')
+        ->join('departments','users.deptId','=','departments.deptId')
+        ->where('users.roleId',2)
+        ->get();
+        return view('admin.allHod',['hod'=>$hod]);
+    }
 }

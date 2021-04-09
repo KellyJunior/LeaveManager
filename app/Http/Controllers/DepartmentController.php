@@ -23,4 +23,9 @@ class DepartmentController extends Controller
         return view('admin.allDepartment',['departments'=>$departments, 'totalEmplWeb'=>$totalEmplWeb, 'totalEmplMob'=>$totalEmplMob,
         'totalEmplManag'=>$totalEmplManag, 'totalEmplAi'=>$totalEmplAi]);
     }
+
+
+    public function webDevDetails(){
+        return view('admin.webDevDetails');
+    }
 }
