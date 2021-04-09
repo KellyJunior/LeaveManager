@@ -22,9 +22,9 @@
             indexLabelFontSize: 16,
             indexLabel: "{label} - {y}%",
             dataPoints: [
-                { y:{{$webMen}}, label: "Men" },
+                { y:{{$managMen}}, label: "Men" },
 
-                { y: {{$webWomen}}, label: "Women" },
+                { y: {{$managWomen}}, label: "Women" },
                 { y: 10.62, label: "Requested Leave" },
                 { y: 5.02, label: "Leave on hold" },
                 { y: 4.07, label: "Accepted Leave" },

@@ -22,9 +22,9 @@
             indexLabelFontSize: 16,
             indexLabel: "{label} - {y}%",
             dataPoints: [
-                { y:{{$webMen}}, label: "Men" },
+                { y:{{$aiMen}}, label: "Men" },
 
-                { y: {{$webWomen}}, label: "Women" },
+                { y: {{$aiWomen}}, label: "Women" },
                 { y: 10.62, label: "Requested Leave" },
                 { y: 5.02, label: "Leave on hold" },
                 { y: 4.07, label: "Accepted Leave" },
@@ -50,7 +50,11 @@
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="charts-single-pro mg-t-30">
                     <div class="alert-title">
-                        <h2>Radar Chart</h2>
+                        <h2>DESCRIPTION</h2>
+                        <details>
+                            <summary>Small Description on the graph</summary>
+                            <p>To Help understand clearly the above graph.</p>
+                          </details>
                         <p>A bar chart provides a way of showing data values. It is sometimes used to show trend data. we create a bar chart for a single dataset and render that in our page.</p>
                     </div>
                     <div id="radar-chart">

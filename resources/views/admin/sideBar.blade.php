@@ -55,10 +55,10 @@
                         </ul>
                     </li>
 
-                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">web development</span></a></li>
-                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">Mobile development</span></a></li>
-                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">Management-Marketing </span></a></li>
-                      <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">Artificial Intelligence</span></a></li>
+                      <li><a title="All Courses" href="{{asset('webDev')}}"><span class="mini-sub-pro">web development</span></a></li>
+                      <li><a title="All Courses" href="{{asset('mobileDev')}}"><span class="mini-sub-pro">Mobile development</span></a></li>
+                      <li><a title="All Courses" href="{{asset('management')}}"><span class="mini-sub-pro">Management-Marketing </span></a></li>
+                      <li><a title="All Courses" href="{{asset('ai')}}"><span class="mini-sub-pro">Artificial Intelligence</span></a></li>
 
 
 

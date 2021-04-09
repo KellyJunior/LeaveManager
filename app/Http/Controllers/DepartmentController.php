@@ -26,6 +26,61 @@ class DepartmentController extends Controller
 
 
     public function webDevDetails(){
-        return view('admin.webDevDetails');
+        $webGraph=DB::table('users')->where('deptId',4000)->get()->count();
+        $webMen=DB::table('users')
+                ->where('deptId',4000)
+                ->where('gender','Male')
+                ->get()->count();
+        $percentageValue=$webMen/$webGraph;
+
+        $webWomen=DB::table('users')
+                    ->where('deptId',4000)
+                    ->where('gender','Female')
+                    ->get()->count();
+        return view('admin.webDevDetails',['webMen'=>$webMen, 'webWomen'=>$webWomen]);
+    }
+    public function mobileDevDetails(){
+        $webGraph=DB::table('users')->where('deptId',5000)->get()->count();
+        $mobMen=DB::table('users')
+                ->where('deptId',5000)
+                ->where('gender','Male')
+                ->get()->count();
+
+
+        $mobWomen=DB::table('users')
+                    ->where('deptId',5000)
+                    ->where('gender','Female')
+                    ->get()->count();
+        return View('admin.mobileDevDetails', ['mobMen'=>$mobMen, 'mobWomen'=>$mobWomen]);
+    }
+
+    public function managementDetails(){
+        $webGraph=DB::table('users')->where('deptId',6000)->get()->count();
+        $managMen=DB::table('users')
+                ->where('deptId',6000)
+                ->where('gender','Male')
+                ->get()->count();
+
+
+        $managWomen=DB::table('users')
+                    ->where('deptId',6000)
+                    ->where('gender','Female')
+                    ->get()->count();
+        return View('admin.managementGraph', ['managMen'=>$managMen, 'managWomen'=>$managWomen]);
+    }
+    public function aiDepDetails(){
+        $webGraph=DB::table('users')->where('deptId',7000)->get()->count();
+        $aiMen=DB::table('users')
+                ->where('deptId',7000)
+                ->where('gender','Male')
+                ->get()->count();
+
+
+        $aiWomen=DB::table('users')
+                    ->where('deptId',7000)
+                    ->where('gender','Female')
+                    ->get()->count();
+        return View('admin.aiDepGraph', ['aiMen'=>$aiMen, 'aiWomen'=>$aiWomen]);
     }
 }
+

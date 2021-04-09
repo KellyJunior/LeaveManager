@@ -21,10 +21,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Routes for admin page setting.
-Route::get('admin', function() {
+/* Route::get('admin', function() {
     return view('admin.footer');
-})->name('admin');
-
+})->name('admin'); */
+Route::get('admin',[App\Http\Controllers\UserController::class,'getCurrentUserDetails']);
 Route::get('adminAnalytics', function(){
     return view('admin.graphAnalytics');
 })->name('adminAnalytics');
@@ -32,11 +32,19 @@ Route::get('adminAnalytics', function(){
 Route::get('all-Hod',[App\Http\Controllers\UserController::class,'getHod']);
 Route::get('all-Employees',[App\Http\Controllers\UserController::class,'getEmployees']);
 Route::get('all-Department',[App\Http\Controllers\DepartmentController::class,'getDepartments']);
- Route::get('add-Department', function(){
+Route::get('add-Department', function(){
     return view('admin.addDepartment');
+});
+/** Get the current logIn user details and customize the dashboard */
+Route::get('user',function(){
+    $user = Auth::user();
+        return $user;
 });
 
 
 
 /*get Details about departments of the enterprises */
 Route::get('webDev',[App\Http\Controllers\DepartmentController::class,'webDevDetails']);
+Route::get('mobileDev',[App\Http\Controllers\DepartmentController::class,'mobileDevDetails']);
+Route::get('management',[App\Http\Controllers\DepartmentController::class,'managementDetails']);
+Route::get('ai',[App\Http\Controllers\DepartmentController::class,'aiDepDetails']);

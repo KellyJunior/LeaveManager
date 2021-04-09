@@ -11,7 +11,7 @@
         exportEnabled: true,
         animationEnabled: true,
         title: {
-            text: "Graphical Details about Web development Department"
+            text: "Graphical Details about Mobile development Department"
         },
         data: [{
             type: "pie",
@@ -22,9 +22,9 @@
             indexLabelFontSize: 16,
             indexLabel: "{label} - {y}%",
             dataPoints: [
-                { y:{{$webMen}}, label: "Men" },
+                { y: {{$mobMen}}, label: "Men" },
 
-                { y: {{$webWomen}}, label: "Women" },
+                { y: {{$mobWomen}}, label: "Women" },
                 { y: 10.62, label: "Requested Leave" },
                 { y: 5.02, label: "Leave on hold" },
                 { y: 4.07, label: "Accepted Leave" },
