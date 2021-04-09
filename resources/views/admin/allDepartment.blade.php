@@ -28,14 +28,14 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="name" data-editable="true">Department Name</th>
-                                                <th data-field="email" data-editable="true">HOD</th>
-                                                <th data-field="phone" data-editable="true">HOD Email</th>
+                                                <th data-field="name" data-editable="false">Department Name</th>
+                                                <th data-field="email" data-editable="false">HOD</th>
+                                                <th data-field="phone" data-editable="false">HOD Email</th>
                                                 <th data-field="complete">Total Employees</th>
                                                 {{-- <th data-field="task" data-editable="true">Task</th>
                                                 <th data-field="date" data-editable="true">Date</th>
                                                 <th data-field="price" data-editable="true">Price</th> --}}
-                                                <th data-field="action">Action</th>
+                                                <th data-field="action">Edit</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -44,9 +44,20 @@
                                                 <td></td>
                                                 <td>{{$department->deptId}}</td>
                                                 <td>{{$department->departmentName}}</td>
-                                                <td>{{$department->name}}</td>
+                                                <td>{{$department->name}} {{$department->lastName}}</td>
                                                 <td>{{$department->email}}</td>
-                                                <td class="datatable-ct">{{$totalEmplWeb}}
+                                                <td class="datatable-ct">
+                                                    <?php
+                                                        if($department->deptId==4000){
+                                                            echo($totalEmplWeb);
+                                                        } else if($department->deptId==5000){
+                                                            echo($totalEmplMob);
+                                                        } else if($department->deptId==6000){
+                                                            echo($totalEmplManag);
+                                                        }else if($department->deptId==7000){
+                                                            echo($totalEmplAi);
+                                                        }
+                                                    ?>
                                                 </td>
                                                 <td class="datatable-ct"><i class="fa fa-check"></i>
                                                 </td>

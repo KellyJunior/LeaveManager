@@ -15,18 +15,18 @@ class UsersTableDataSeeder extends Seeder
      */
     public function run()
     {
-        for ($i=0; $i<20; $i++){
+        for ($i=0; $i<21; $i++){
             User::create([
                 'name' => str::random(8),
                 'lastName' => str::random(9),
                 'username' => str::random(8),
-                'email' => str::random(12).'@mail.com',
+                'email' => str::random(12).'@gmail.com',
                 'password' => Hash::make('Password'),
-                'gender' => 'Female',
+                'gender' => 'male',
                 'address'=>'Mumbai',
                 'mobileNumber'=> mt_rand(1000000000, 9999999999),
-                'dob'=>'1999-09-07',
-                'deptId'=>4000,
+                'dob'=>'1989-08-10',
+                'deptId'=>7000,
                 'roleId'=>3,
                 'profilePic'=>'/public/img/image.jpg',
                 //'userId'=> mt_rand(40003, 50000),

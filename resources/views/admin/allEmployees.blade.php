@@ -54,6 +54,12 @@
                                                 <td> <?php
                                                     if($employee->deptId==4000){
                                                         echo('Web development');
+                                                    }else if($employee->deptId==5000){
+                                                        echo('Mobile development');
+                                                    }else if($employee->deptId==6000){
+                                                        echo('Management-Marketing');
+                                                    }else {
+                                                        echo('Artificial Intelligence');
                                                     }
                                                 ?></td>
                                                 <td>{{$employee->dob}}</td>

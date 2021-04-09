@@ -16,7 +16,11 @@ class DepartmentController extends Controller
         ->get();
         //Total Number of employees
         $totalEmplWeb= DB::table('users')->where('deptId',4000)->get()->count();
+        $totalEmplMob= DB::table('users')->where('deptId',5000)->get()->count();
+        $totalEmplManag= DB::table('users')->where('deptId',6000)->get()->count();
+        $totalEmplAi= DB::table('users')->where('deptId',7000)->get()->count();
 //echo($departments);
-        return view('admin.allDepartment',['departments'=>$departments, 'totalEmplWeb'=>$totalEmplWeb]);
+        return view('admin.allDepartment',['departments'=>$departments, 'totalEmplWeb'=>$totalEmplWeb, 'totalEmplMob'=>$totalEmplMob,
+        'totalEmplManag'=>$totalEmplManag, 'totalEmplAi'=>$totalEmplAi]);
     }
 }

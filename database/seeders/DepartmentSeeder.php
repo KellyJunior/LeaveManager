@@ -18,9 +18,9 @@ class DepartmentSeeder extends Seeder
     {
 
         DB::table('departments')->insert([
-            'deptId' => 7000,
-            'departmentName' => "Management",
-            'HOD' => "Esther KELY",
+            'deptId' => 6000,
+            'departmentName' => "Management-Marketing",
+            'HOD' => "Mukesh Jordan",
         ]);
     }
 }
