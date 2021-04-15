@@ -162,14 +162,24 @@
                                     </li>
                                     <li class="nav-item">
                                         <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-                                                <img src="img/product/pro4.jpg" alt="" />
-                                                <span class="admin-name">{{$user->username}}</span>
+
+
+                                             
+                                            <img src="storage/{{Auth::user()->profilePic}}" alt="" />
+
+
+                                                <span class="admin-name">
+
+                                                <?php
+                                                $user = Auth::user();
+                                                echo($user->username);
+                                                ?>
+                                                </span>
                                                 <i class="fa fa-angle-down edu-icon edu-down-arrow"></i>
                                             </a>
                                         <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                            <li><a href="#"><span class="edu-icon edu-home-admin author-log-ic"></span>My Account</a>
-                                            </li>
-                                            <li><a href="#"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
+
+                                            <li><a href="{{asset('myProfile')}}"><span class="edu-icon edu-user-rounded author-log-ic"></span>My Profile</a>
                                             </li>
                                             <li><a href="#"><span class="edu-icon edu-money author-log-ic"></span>User Billing</a>
                                             </li>

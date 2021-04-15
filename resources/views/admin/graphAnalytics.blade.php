@@ -9,7 +9,7 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <div class="caption pro-sl-hd">
-                                    <span class="caption-subject"><b>University Earnings</b></span>
+                                    <span class="caption-subject"><b>AFRO Technologies Earnings</b></span>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
@@ -21,13 +21,13 @@
                     </div>
                     <ul class="list-inline cus-product-sl-rp">
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>CSE</h5>
+                            <h5><i class="fa fa-circle" style="color: #006DF0;"></i>WEB DEV</h5>
                         </li>
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #933EC5;"></i>Accounting</h5>
+                            <h5><i class="fa fa-circle" style="color: #933EC5;"></i>MOBILE DEV</h5>
                         </li>
                         <li>
-                            <h5><i class="fa fa-circle" style="color: #65b12d;"></i>Electrical</h5>
+                            <h5><i class="fa fa-circle" style="color: #65b12d;"></i>ARTIFICIAL INTELLIGENCE</h5>
                         </li>
                     </ul>
                     <div id="extra-area-chart" style="height: 356px;"></div>
@@ -35,25 +35,25 @@
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                 <div class="white-box analytics-info-cs mg-b-10 res-mg-b-30 res-mg-t-30 table-mg-t-pro-n tb-sm-res-d-n dk-res-t-d-n">
-                    <h3 class="box-title">Total Visit</h3>
+                    <h3 class="box-title">Total Employees</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash"></div>
                         </li>
-                        <li class="text-right sp-cn-r"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-success">1500</span></li>
+                        <li class="text-right sp-cn-r"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-success">{{ $allEmployees }}</span></li>
                     </ul>
                 </div>
                 <div class="white-box analytics-info-cs mg-b-10 res-mg-b-30 tb-sm-res-d-n dk-res-t-d-n">
-                    <h3 class="box-title">Page Views</h3>
+                    <h3 class="box-title">Head of Dept.</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash2"></div>
                         </li>
-                        <li class="text-right graph-two-ctn"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-purple">3000</span></li>
+                        <li class="text-right graph-two-ctn"><i class="fa fa-level-up" aria-hidden="true"></i> <span class="counter text-purple">{{$hods}}</span></li>
                     </ul>
                 </div>
                 <div class="white-box analytics-info-cs mg-b-10 res-mg-b-30 tb-sm-res-d-n dk-res-t-d-n">
-                    <h3 class="box-title">Unique Visitor</h3>
+                    <h3 class="box-title">Employees Online</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash3"></div>
@@ -62,7 +62,7 @@
                     </ul>
                 </div>
                 <div class="white-box analytics-info-cs table-dis-n-pro tb-sm-res-d-n dk-res-t-d-n">
-                    <h3 class="box-title">Bounce Rate</h3>
+                    <h3 class="box-title">On Leave</h3>
                     <ul class="list-inline two-part-sp">
                         <li>
                             <div id="sparklinedash4"></div>

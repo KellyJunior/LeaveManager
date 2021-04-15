@@ -20,21 +20,21 @@
                     </li>
 
                     <li>
-                        <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">HODs (1)</span></a>
+                        <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">HODs (2)</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Professors" href="{{asset('all-Hod')}}"><span class="mini-sub-pro">All HOD(s)</span></a></li>
                             <li><a title="Add Professor" href="add-professor.html"><span class="mini-sub-pro">Add New HOD</span></a></li>
                             </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Employees (2)</span></a>
+                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Employees (3)</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Students" href="{{asset('all-Employees')}}"><span class="mini-sub-pro">All Employees</span></a></li>
                             <li><a title="Add Students" href=""><span class="mini-sub-pro">New Employee(s)</span></a></li>
                             </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Syst Admin (3)</span></a>
+                        <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Syst Admin (1)</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Students" href="all-students.html"><span class="mini-sub-pro">Admin</span></a></li>
                             <li><a title="Add Students" href="add-student.html"><span class="mini-sub-pro">New Admin</span></a></li>
@@ -55,21 +55,18 @@
                         </ul>
                     </li>
 
-                      <li><a title="All Courses" href="{{asset('webDev')}}"><span class="mini-sub-pro">web development</span></a></li>
-                      <li><a title="All Courses" href="{{asset('mobileDev')}}"><span class="mini-sub-pro">Mobile development</span></a></li>
-                      <li><a title="All Courses" href="{{asset('management')}}"><span class="mini-sub-pro">Management-Marketing </span></a></li>
-                      <li><a title="All Courses" href="{{asset('ai')}}"><span class="mini-sub-pro">Artificial Intelligence</span></a></li>
-
-
-
-                    {{-- <li>
-                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Library</span></a>
-                        <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Library" href="library-assets.html"><span class="mini-sub-pro">Library Assets</span></a></li>
-                            <li><a title="Add Library" href="add-library-assets.html"><span class="mini-sub-pro">Add Library Asset</span></a></li>
-                            <li><a title="Edit Library" href="edit-library-assets.html"><span class="mini-sub-pro">Edit Library Asset</span></a></li>
-                        </ul>
-                    </li> --}}
+                     <li>
+                        <a class="" href="{{asset('webDev')}}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">web development</span></a>
+                    </li>
+                    <li>
+                        <a class="" href="{{asset('mobileDev')}}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Mobile development</span></a>
+                    </li>
+                    <li>
+                        <a class="" href="{{asset('management')}}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Management-Marketing</span></a>
+                    </li>
+                    <li>
+                        <a class="" href="{{asset('ai')}}" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Artificial Intelligence</span></a>
+                    </li>
 
                     {{-- <li>
                         <a class="has-arrow" href="mailbox.html" aria-expanded="false"><span class="educate-icon educate-message icon-wrap"></span> <span class="mini-click-non">Mailbox</span></a>
