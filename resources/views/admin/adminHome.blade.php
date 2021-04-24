@@ -55,6 +55,12 @@
     <!-- style CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('style.css')}}">
+    <!-- dropzone CSS
+		============================================ -->
+        <link rel="stylesheet" href="{{asset('css/dropzone/dropzone.css')}}">
+        <!-- forms CSS
+		============================================ -->
+    <link rel="stylesheet" href="{{asset('css/form/all-type-forms.css')}}">
     <!-- responsive CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
@@ -64,7 +70,8 @@
 
 
 
-    
+
+
 </head>
 
 <body>
@@ -95,8 +102,12 @@
         </div>
            @yield('adminAnalytics')
            @yield('graphAnalytics')
-           @yield('pageContent')
+
+            @yield('pageContent')
+
+
            @yield('footer')
+    </div>
     <!-- jquery
 		============================================ -->
     <script src="{{asset('js/vendor/jquery-1.12.4.min.js')}}"></script>
@@ -143,6 +154,22 @@
     <script src="{{asset('js/morrisjs/raphael-min.js')}}"></script>
     <script src="{{asset('js/morrisjs/morris.js')}}"></script>
     <script src="{{asset('js/morrisjs/morris-active.js')}}"></script>
+    <!-- maskedinput JS
+		============================================ -->
+        <script src="{{asset('js/jquery.maskedinput.min.js')}}"></script>
+        <script src="{{asset('js/masking-active.js')}}"></script>
+        <!-- datepicker JS
+            ============================================ -->
+        <script src="{{asset('js/datepicker/jquery-ui.min.js')}}"></script>
+        <script src="{{asset('js/datepicker/datepicker-active.js')}}"></script>
+        <!-- form validate JS
+            ============================================ -->
+        <script src="{{asset('js/form-validation/jquery.form.min.js')}}"></script>
+        <script src="{{asset('js/form-validation/jquery.validate.min.js')}}"></script>
+        <script src="{{asset('js/form-validation/form-active.js')}}"></script>
+        <!-- dropzone JS
+            ============================================ -->
+        <script src="{{asset('js/dropzone/dropzone.js')}}"></script>
     <!-- morrisjs JS
 		============================================ -->
     <script src="{{asset('js/sparkline/jquery.sparkline.min.js')}}"></script>
@@ -194,6 +221,7 @@
 		============================================ -->
     <script src="{{asset('js/charts/Chart.js')}}"></script>
     <script src="{{asset('js/charts/rounded-chart.js')}}"></script>
+
 </body>
 
 </html>

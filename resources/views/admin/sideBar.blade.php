@@ -51,7 +51,7 @@
                         <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Leaves</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Requests</span></a></li>
-                            <li><a title="Add Courses" href="add-course.html"><span class="mini-sub-pro">New Request </span></a></li>
+                            <li><a title="Add Courses" href="{{asset('request-leave')}}"><span class="mini-sub-pro">New Request </span></a></li>
                         </ul>
                     </li>
 
@@ -146,4 +146,5 @@
         </div>
     </nav>
 </div>
+
 @endsection

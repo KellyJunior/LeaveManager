@@ -1,5 +1,6 @@
 @extends('admin.searchBar')
 @section('adminAnalytics')
+<div class="all-content-wrapper">
 <div class="analytics-sparkle-area">
     <div class="container-fluid">
         <div class="row">
@@ -53,6 +54,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 
 @endsection

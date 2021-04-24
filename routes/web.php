@@ -47,3 +47,13 @@ Route::get('management',[App\Http\Controllers\DepartmentController::class,'manag
 Route::get('ai',[App\Http\Controllers\DepartmentController::class,'aiDepDetails']);
 
 Route::get('myProfile',[App\Http\Controllers\UserController::class,'getCurrentUserProfile']);
+
+/*
+Request for a Leave  routes
+*/
+/* Route::get('request-leave', function(){
+    return view('admin.requestLeave');
+}); */
+Route::get('request-leave',[App\Http\Controllers\LeaveController::class,'requestLeave']);
+Route::post('confirmation',[App\Http\Controllers\LeaveController::class,'confirmation'])->name('confirmation');
+Route::post('confirm-leave',[App\Http\Controllers\LeaveController::class,'saveLeave'])->name('confirm-leave');
