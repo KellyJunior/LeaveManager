@@ -40,6 +40,45 @@ class UserController extends Controller
         $hods=DB::table('users')->where('roleId',2)->get()->count();
         return view('admin.graphAnalytics',['allEmployees'=>$allEmployees, 'hods'=>$hods]);
     }
+    public function getWebEmployees(){
+        $user = Auth::user();
+        $allWebEmployees=DB::table('users')
+        ->where('roleId',3)
+        ->where('deptId',4000)
+        ->get();
+        return view('admin.allWebEmployees',['allWebEmployees'=>$allWebEmployees, 'user'=>$user]);
+    }
+    public function getMobileEmployees(){
+        $user = Auth::user();
+        $allMobileEmployees=DB::table('users')
+        ->where('roleId',3)
+        ->where('deptId',5000)
+        ->get();
+        return view('admin.allMobileEmployees',['allMobileEmployees'=>$allMobileEmployees, 'user'=>$user]);
+    }
+    public function getManagementEmployees(){
+        $user = Auth::user();
+        $allManagementEmployees=DB::table('users')
+        ->where('roleId',3)
+        ->where('deptId',6000)
+        ->get();
+        return view('admin.allManagementEmployees',['allManagementEmployees'=>$allManagementEmployees, 'user'=>$user]);
+    }
+    public function getAiEmployees(){
+        $user = Auth::user();
+        $allAiEmployees=DB::table('users')
+        ->where('roleId',3)
+        ->where('deptId',7000)
+        ->get();
+        return view('admin.allAiEmployees',['allAiEmployees'=>$allAiEmployees, 'user'=>$user]);
+    }
+    /** Function to get the list of all employees in the system */
+    public  function getHods(){
+        $allHods=DB::table('users')
+        ->where('roleId',2)
+        ->get();
+        return view('admin.allHods',['allHods'=>$allHods]);
+    }
 }
 
 

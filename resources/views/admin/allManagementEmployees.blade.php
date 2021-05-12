@@ -40,7 +40,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($hod as $employee)
+                                            @foreach($allManagementEmployees as $employee)
                                             <tr>
                                                 <td></td>
                                                 <td>{{$employee->id}}</td>

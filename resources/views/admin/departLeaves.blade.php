@@ -1,7 +1,5 @@
 @extends('admin.footer')
 @section('pageContent')
-
-
         <!-- Static Table Start -->
         <div class="data-table-area mg-b-15">
             <div class="container-fluid">
@@ -10,7 +8,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1>WEB <span class="table-project-n">Employee</span> Table</h1>
+                                    <h1>Web Department <span class="table-project-n">Leaves</span> List</h1>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -28,33 +26,34 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="name" data-editable="true">Name</th>
                                                 <th data-field="email" data-editable="true">Email</th>
-                                                <th data-field="phone" data-editable="true">Phone</th>
-                                                <th data-field="complete">Start Day</th>
-                                                <th data-field="task" data-editable="true">Gender</th>
-                                                <th data-field="date" data-editable="true">Address</th>
+                                                <th data-field="name" data-editable="true">Department Name</th>
+                                                <th data-field="complete">Leave Type</th>
+                                                <th data-field="task" data-editable="true">Request Date</th>
+                                                <th data-field="proof">Proof Documents</th>
+                                                <th data-field="status" >Status</th>
+                                                <th data-field="action" data-editable="true">Options</th>
 
-                                                <th data-field="">Date of Birth</th>
-                                                <th data-field="action">Total Leave</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($hod as $employee)
-                                            <tr>
-                                                <td></td>
-                                                <td>{{$employee->id}}</td>
-                                                <td>{{$employee->name}} {{$employee->lastName}}</td>
-                                                <td>{{$employee->email}}</td>
-                                                <td>{{{$employee->mobileNumber}}}</td>
-                                                <td>{{$employee->created_at}}</span>
-                                                </td>
-                                                <td>{{$employee->gender}}</td>
-                                                <td>{{$employee->address}}</td>
+                                            @foreach($webDept as $leave)
+                                                <tr>
+                                                    <td></td>
+                                                    <td> {{$leave->id}} </td>
+                                                    <td> {{$leave->email}} </td>
+                                                    <td> {{$leave->departmentName}} </td>
+                                                    <td> {{{$leave->leaveType}}} </td>
+                                                    <td> {{$leave->created_at}} </td>
+                                                    <td> {{$leave->proofDoc}} <i class="fa fa-file-word"></i></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary"> Processing... </button>
 
-                                                <td>{{$employee->dob}}</td>
-                                                <td ><i class="fa fa-check"></i></td>
-                                            </tr>
+                                                    </td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-danger">Respond</button>
+                                                    </td>
+                                                </tr>
                                             @endforeach
                                         </tbody>
                                     </table>

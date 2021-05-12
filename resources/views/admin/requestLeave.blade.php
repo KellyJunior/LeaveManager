@@ -16,7 +16,7 @@
                                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                             <div class="review-content-section">
                                                 {{-- <div id="dropzone1" class="pro-ad addcoursepro"> --}}
-                                                    <form   action="{{route('confirmation')}}" method="post" enctype="multipart/form-data">
+                                                    <form   action="{{route('confirm-leave')}}" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                         <div class="row">
                                                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">

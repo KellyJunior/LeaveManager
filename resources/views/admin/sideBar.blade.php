@@ -27,6 +27,24 @@
                             </ul>
                     </li>
                     <li>
+                        <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-professor icon-wrap"></span> <span class="mini-click-non">Employees-Dept</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="All Professors" href="{{asset('Web/Employees')}}"><span class="mini-sub-pro">Web Employees</span></a></li>
+                            <li><a title="Add Professor" href="{{asset('Mobile/Employees')}}"><span class="mini-sub-pro">Mobile Employee</span></a></li>
+                            <li><a title="Add Professor" href="{{asset('Management/Employees')}}"><span class="mini-sub-pro">Management Employee</span></a></li>
+                            <li><a title="Add Professor" href="{{asset('Ai/Employees')}}"><span class="mini-sub-pro">AI Employee</span></a></li>
+                            </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow" href="all-professors.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Leaves Responses</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="All Professors" href="{{asset('Web/DepartmentLeaves')}}"><span class="mini-sub-pro">Web Leaves</span></a></li>
+                            <li><a title="All Professors" href="{{asset('mobile/DepartmentLeaves')}}"><span class="mini-sub-pro"> Mobile Leaves</span></a></li>
+                            <li><a title="All Professors" href="{{asset('Management/DepartmentLeaves')}}"><span class="mini-sub-pro"> Management Leaves</span></a></li>
+                            <li><a title="All Professors" href="{{asset('Ai/DepartmentLeaves')}}"><span class="mini-sub-pro"> Ai Leaves</span></a></li>
+                            </ul>
+                    </li>
+                    <li>
                         <a class="has-arrow" href="all-students.html" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Employees (3)</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Students" href="{{asset('all-Employees')}}"><span class="mini-sub-pro">All Employees</span></a></li>
@@ -50,7 +68,7 @@
                     <li>
                         <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Leaves</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
-                            <li><a title="All Courses" href="all-courses.html"><span class="mini-sub-pro">All Requests</span></a></li>
+                            <li><a title="All Courses" href="{{asset('all-leaves')}}"><span class="mini-sub-pro">All Requests</span></a></li>
                             <li><a title="Add Courses" href="{{asset('request-leave')}}"><span class="mini-sub-pro">New Request </span></a></li>
                         </ul>
                     </li>

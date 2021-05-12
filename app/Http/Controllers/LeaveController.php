@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Leave;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\File;
@@ -70,5 +72,34 @@ class LeaveController extends Controller
         values (?, ?,?,?,?,?,?)', [$leave->email,$leave->departmentName,$leave->leaveType,$leave->description
         ,$leave->proofDoc,$c,$u]);
         //$leave->save();
+        //return redirect('')
+    }
+    public function allLeaves(){
+        $leaves = \App\Models\Leave::all();
+        return view('admin.allLeaves',['leaves'=>$leaves]);
+    }
+    public function allLeavesDepartmentWeb(){
+        $userDept = Auth::user()->deptId;
+        $userRole = Auth::user()->roleId;
+        $webDept = DB::table('leaves')->where('departmentName', 'Web development')->get();
+        return view ('admin.departLeaves', ['webDept'=>$webDept]);
+    }
+// Function for printing all Mobile department  leaves requests.
+    public function allLeavesDepartmentMobile(){
+        $user = Auth::user()->departmentName;
+        $mobileDept = DB::table('leaves')->where('departmentName', 'Mobile development')->get();
+        return view ('admin.mobileDeptLeaves', ['mobileDept'=>$mobileDept]);
+    }
+// Function for printing all Management department  leaves requests.
+    public function allLeavesDepartmentManag(){
+        $user = Auth::user()->departmentName;
+        $managDept = DB::table('leaves')->where('departmentName', 'Management-Marketing')->get();
+        return view ('admin.managementDeptLeaves', ['managDept'=>$managDept]);
+    }
+// Function for printing all Ai department  leaves requests.
+    public function allLeavesDepartmentAi(){
+        $user = Auth::user()->departmentName;
+        $aiDept = DB::table('leaves')->where('departmentName', 'Artificial Intelligence')->get();
+        return view ('admin.aiDeptLeaves', ['aiDept'=>$aiDept]);
     }
 }

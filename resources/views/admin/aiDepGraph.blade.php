@@ -11,7 +11,7 @@
         exportEnabled: true,
         animationEnabled: true,
         title: {
-            text: "Graphical Details about Web development Department"
+            text: "Graphical Details about AI development Department"
         },
         data: [{
             type: "pie",

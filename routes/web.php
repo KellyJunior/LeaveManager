@@ -55,5 +55,21 @@ Request for a Leave  routes
     return view('admin.requestLeave');
 }); */
 Route::get('request-leave',[App\Http\Controllers\LeaveController::class,'requestLeave']);
-Route::post('confirmation',[App\Http\Controllers\LeaveController::class,'confirmation'])->name('confirmation');
+//Route::post('confirmation',[App\Http\Controllers\LeaveController::class,'confirmation'])->name('confirmation');
 Route::post('confirm-leave',[App\Http\Controllers\LeaveController::class,'saveLeave'])->name('confirm-leave');
+Route::get('all-leaves',[App\Http\Controllers\LeaveController::class,'allLeaves'])->name('all-leave');
+/* Route::get('all-leaves', function(){
+    $leaves = \App\Models\Leave::all();
+    return view('admin.allLeaves',['leaves'=>$leaves]);
+}); */
+Route::get('Web/DepartmentLeaves',[App\Http\Controllers\LeaveController::class,'allLeavesDepartmentWeb'])->name('Web/DepartmentLeaves');
+Route::get('mobile/DepartmentLeaves',[App\Http\Controllers\LeaveController::class,'allLeavesDepartmentMobile'])->name('mobile/DepartmentLeaves');
+Route::get('Management/DepartmentLeaves',[App\Http\Controllers\LeaveController::class,'allLeavesDepartmentManag'])->name('Management/DepartmentLeaves');
+Route::get('Ai/DepartmentLeaves',[App\Http\Controllers\LeaveController::class,'allLeavesDepartmentAi'])->name('Ai/DepartmentLeaves');
+
+/** Employees table per departments */
+Route::get('Web/Employees',[App\Http\Controllers\UserController::class,'getWebEmployees'])->name('Web/Employees');
+Route::get('Mobile/Employees',[App\Http\Controllers\UserController::class,'getMobileEmployees'])->name('Mobile/Employees');
+Route::get('Management/Employees',[App\Http\Controllers\UserController::class,'getManagementEmployees'])->name('Management/Employees');
+Route::get('Ai/Employees',[App\Http\Controllers\UserController::class,'getAiEmployees'])->name('Ai/Employees');
+
