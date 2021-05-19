@@ -31,8 +31,8 @@
                                                 <th data-field="complete">Leave Type</th>
                                                 <th data-field="task" data-editable="true">Request Date</th>
                                                 <th data-field="">Proof Documents</th>
-                                                <th data-field="date" data-editable="false">Edit</th>
-                                                <th data-field="date" data-editable="false">Delete</th>
+                                                <th data-field="date" data-editable="false">View</th>
+                                                <th data-field="status" data-editable="false">Status</th>
 
                                             </tr>
                                         </thead>
@@ -47,11 +47,23 @@
                                                     <td> {{$leave->created_at}} </td>
                                                     <td> {{$leave->proofDoc}} <i class="fa fa-file-word"></i></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary">Edit</button>
+                                                        <a href="view/{{$leave->id}}">
+                                                            <button type="button" class="btn btn-primary">View</button>
+                                                        </a>
 
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+
+                                                        @if ($leave->status=="Accepted")
+                                                            <button type="button" class="btn btn-success">{{$leave->status}}</button>
+                                                        @elseif ($leave->status="Refused")
+                                                            <button type="button" class="btn btn-danger">{{$leave->status}}</button>
+                                                        @elseif ($leave->status="Processing")
+                                                            <button type="button" class="btn btn-default">{{$leave->status}}</button>
+                                                        @endif
+
+
+
                                                     </td>
                                                 </tr>
                                             @endforeach

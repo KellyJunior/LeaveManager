@@ -15,21 +15,14 @@
                                     </a>
                             </li>
                             <li>
-
-                                <a href="#">
-                                    <span class="pull-right">{{$totalAcceptedLeave}}</span>
-                                    <i class="fa fa-check" style="color: green"></i> Accepted
-                                </a>
+                                <a href="#"><i class="fa fa-check" style="color: green"></i> Accepted </a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <span class="pull-right">{{$totalRefusedLeave}}</span>
-                                    <i class="fa fa-times" style="color: red"></i> Refused
-                                </a>
+                                <a href="#"><i class="fa fa-times" style="color: red"></i> Refused</a>
                             </li>
-                            {{-- <li>
-                                <a href="#"><i class="fa fa-trash"></i> Delete</a>
-                            </li> --}}
+                             <li>
+                                <a href="#"><i class="fa fa-print"></i> Print</a>
+                            </li>
                         </ul>
                         <hr>
                         <ul class="mailbox-list">
@@ -112,8 +105,8 @@
                 <span><i class="fa fa-paperclip"></i> 1 attachment - </span>
                 <a href="#" class="btn btn-default btn-xs">Download all in zip format <i class="fa fa-file-zip-o"></i> </a>
             </p>
-
-{{--             <div>
+{{--
+            <div>
                 <div class="row">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                         <div class="hpanel vw-mb">
@@ -150,13 +143,20 @@
             </div> --}}
         </div>
 
-        <div class="panel-footer text-right ft-pn">
+        <div style="display: flex;" class="panel-footer text-right ft-pn">
             <div class="btn-group active-hook">
-                <a href="{{asset('all-leaves')}}">
+                <a href="{{asset('Web/DepartmentLeaves')}}">
                     <button class="btn btn-default"><i class="fa fa-reply"></i> Go Back</button>
                 </a>
-                <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
-                {{-- <button class="btn btn-default"><i class="fa fa-trash-o"></i> Remove</button> --}}
+                <form action="refuse/{{$selectedLeave[0]->id}}" method="POST" style="float:left;">
+                    @csrf
+                    <button type="submit" class="btn btn-danger" id="buttonRefuse" ><i class="fa fa-times"></i> Refuse</button>
+                </form>
+
+                <form action="accept/{{$selectedLeave[0]->id}}" method="POST" style="float:right;">
+                    @csrf
+                    <button type="submit" value="Accepted" id="buttonAccept" class="btn btn-success"><i class="fa fa-check"></i> Accept</button>
+                </form>
             </div>
         </div>
     </div>

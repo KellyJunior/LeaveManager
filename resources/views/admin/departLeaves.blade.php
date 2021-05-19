@@ -31,8 +31,8 @@
                                                 <th data-field="complete">Leave Type</th>
                                                 <th data-field="task" data-editable="true">Request Date</th>
                                                 <th data-field="proof">Proof Documents</th>
-                                                <th data-field="status" >Status</th>
-                                                <th data-field="action" data-editable="true">Options</th>
+                                                <th data-field="status">Status</th>
+                                                <th data-field="action">Options</th>
 
                                             </tr>
                                         </thead>
@@ -47,11 +47,13 @@
                                                     <td> {{$leave->created_at}} </td>
                                                     <td> {{$leave->proofDoc}} <i class="fa fa-file-word"></i></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary"> Processing... </button>
+                                                        <button type="button" class="btn btn-primary"><i class="fa fa-recycle"></i> {{$leave->status}} </button>
 
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger">Respond</button>
+                                                        <a href="respond/{{$leave->id}}">
+                                                            <button type="button" class="btn btn-danger">Respond</button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -97,7 +97,9 @@ textarea {
 
 
 
-
+#buttonAccept, #buttonRefuse{
+    display:inline-block;
+}
 
 
 

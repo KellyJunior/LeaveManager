@@ -8,7 +8,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1>Mobile Department <span class="table-project-n">Leaves</span> List</h1>
+                                    <h1>Employees <span class="table-project-n">List</span> Table</h1>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -26,18 +26,18 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="email" data-editable="true">Email</th>
-                                                <th data-field="name" data-editable="true">Department Name</th>
+                                                <th data-field="name" data-editable="true">Email</th>
+                                                <th data-field="email" data-editable="true">Department Name</th>
                                                 <th data-field="complete">Leave Type</th>
                                                 <th data-field="task" data-editable="true">Request Date</th>
-                                                <th data-field="proof">Proof Documents</th>
-                                                <th data-field="status" >Status</th>
-                                                <th data-field="action" data-editable="true">Options</th>
+                                                <th data-field="">Proof Documents</th>
+                                                <th data-field="view" data-editable="false">Edit</th>
+                                                <th data-field="status" data-editable="false">Status</th>
 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($mobileDept as $leave)
+                                            @foreach($myLeaves as $leave)
                                                 <tr>
                                                     <td></td>
                                                     <td> {{$leave->id}} </td>
@@ -47,11 +47,19 @@
                                                     <td> {{$leave->created_at}} </td>
                                                     <td> {{$leave->proofDoc}} <i class="fa fa-file-word"></i></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary"> {{$leave->status}} </button>
+                                                        <a href="view/{{$leave->id}}"><button type="button" class="btn btn-primary"><i class="fa fa-eye"></i> View</button></a>
 
                                                     </td>
                                                     <td>
-                                                        <button type="button" class="btn btn-danger">Respond</button>
+                                                       
+
+                                                        @if ($leave->status=="Accepted")
+                                                            <button type="button" class="btn btn-success">{{$leave->status}}</button>
+                                                        @elseif ($leave->status="Refused")
+                                                            <button type="button" class="btn btn-danger">{{$leave->status}}</button>
+                                                        @elseif ($leave->status="Processing")
+                                                            <button type="button" class="btn btn-default">{{$leave->status}}</button>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -73,3 +73,9 @@ Route::get('Mobile/Employees',[App\Http\Controllers\UserController::class,'getMo
 Route::get('Management/Employees',[App\Http\Controllers\UserController::class,'getManagementEmployees'])->name('Management/Employees');
 Route::get('Ai/Employees',[App\Http\Controllers\UserController::class,'getAiEmployees'])->name('Ai/Employees');
 
+Route::get(' all-leaves-employee',[App\Http\Controllers\LeaveController::class,'getEmployeeLeaves'])->name('all-leaves-employee');
+Route::get('view/{id}',[App\Http\Controllers\LeaveController::class,'leaveView'])->name('view/{id}');
+Route::get('Web/respond/{id}',[App\Http\Controllers\LeaveController::class,'respondLeaveRequest'])->name('respond/{id}'); //acceptLeave
+Route::post('Web/respond/accept/{id}',[App\Http\Controllers\LeaveController::class,'acceptLeaveRequest'])->name('Web/respond/accept/{id}');
+Route::post('Web/respond/refuse/{id}',[App\Http\Controllers\LeaveController::class,'refuseLeaveRequest'])->name('Web/respond/refuse/{id}');
+

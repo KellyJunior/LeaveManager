@@ -66,9 +66,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Leaves</span></a>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Leaves Admin</span></a>
                         <ul class="submenu-angle" aria-expanded="false">
                             <li><a title="All Courses" href="{{asset('all-leaves')}}"><span class="mini-sub-pro">All Requests</span></a></li>
+                            <li><a title="Add Courses" href="{{asset('request-leave')}}"><span class="mini-sub-pro">New Request </span></a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-course icon-wrap"></span> <span class="mini-click-non">Leaves Employee</span></a>
+                        <ul class="submenu-angle" aria-expanded="false">
+                            <li><a title="All Courses" href="{{asset('all-leaves-employee')}}"><span class="mini-sub-pro">My Request(s)</span></a></li>
                             <li><a title="Add Courses" href="{{asset('request-leave')}}"><span class="mini-sub-pro">New Request </span></a></li>
                         </ul>
                     </li>

@@ -47,7 +47,7 @@
                                                     <td> {{$leave->created_at}} </td>
                                                     <td> {{$leave->proofDoc}} <i class="fa fa-file-word"></i></td>
                                                     <td>
-                                                        <button type="button" class="btn btn-primary"> Processing... </button>
+                                                        <button type="button" class="btn btn-primary"> {{$leave->status}} </button>
 
                                                     </td>
                                                     <td>

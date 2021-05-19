@@ -10,7 +10,7 @@
                         <div class="sparkline13-list">
                             <div class="sparkline13-hd">
                                 <div class="main-sparkline13-hd">
-                                    <h1>WEB <span class="table-project-n">Employee</span> Table</h1>
+                                    <h1> All  <span class="table-project-n">HODs</span> Table</h1>
                                 </div>
                             </div>
                             <div class="sparkline13-graph">
@@ -28,14 +28,13 @@
                                             <tr>
                                                 <th data-field="state" data-checkbox="true"></th>
                                                 <th data-field="id">ID</th>
-                                                <th data-field="name" data-editable="true">Name</th>
-                                                <th data-field="email" data-editable="true">Email</th>
-                                                <th data-field="phone" data-editable="true">Phone</th>
-                                                <th data-field="complete">Start Day</th>
-                                                <th data-field="task" data-editable="true">Gender</th>
-                                                <th data-field="date" data-editable="true">Address</th>
-
-                                                <th data-field="">Date of Birth</th>
+                                                <th data-field="name" >Name</th>
+                                                <th data-field="email">Email</th>
+                                                <th data-field="phone">Phone</th>
+                                                <th data-field="start">Start Day</th>
+                                                <th data-field="gender">Gender</th>
+                                                <th data-field="address">Address</th>
+                                                <th data-field="dob">Date of Birth</th>
                                                 <th data-field="action">Total Leave</th>
                                             </tr>
                                         </thead>
@@ -47,13 +46,12 @@
                                                 <td>{{$employee->name}} {{$employee->lastName}}</td>
                                                 <td>{{$employee->email}}</td>
                                                 <td>{{{$employee->mobileNumber}}}</td>
-                                                <td>{{$employee->created_at}}</span>
-                                                </td>
+                                                <td>{{$employee->created_at}}</td>
                                                 <td>{{$employee->gender}}</td>
                                                 <td>{{$employee->address}}</td>
 
                                                 <td>{{$employee->dob}}</td>
-                                                <td ><i class="fa fa-check"></i></td>
+                                                <td >5</td>
                                             </tr>
                                             @endforeach
                                         </tbody>

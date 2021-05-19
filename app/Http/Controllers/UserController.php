@@ -77,7 +77,7 @@ class UserController extends Controller
         $allHods=DB::table('users')
         ->where('roleId',2)
         ->get();
-        return view('admin.allHods',['allHods'=>$allHods]);
+        return view('admin.allHod',['allHods'=>$allHods]);
     }
 }
 

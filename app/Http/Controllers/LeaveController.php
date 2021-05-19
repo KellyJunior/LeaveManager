@@ -102,4 +102,36 @@ class LeaveController extends Controller
         $aiDept = DB::table('leaves')->where('departmentName', 'Artificial Intelligence')->get();
         return view ('admin.aiDeptLeaves', ['aiDept'=>$aiDept]);
     }
+
+// Function to get all employee leaves list
+public function getEmployeeLeaves(){
+    $userId = Auth::user()->email;
+    $myLeaves = DB::table('leaves')->where('email',$userId)->get();
+    return view('admin.LogEmployeeLeaves',['myLeaves'=>$myLeaves]);
+}
+// see the requested leave details
+    public function leaveView($id){
+        $user= Auth::user();
+        $selectedLeave = DB::select('select * from leaves where id = ?',[$id]);
+        $totalAcceptedLeave=count(DB::select('select * from leaves where status = "Accepted"', [$id]));
+        $totalRefusedLeave=count(DB::select('select * from leaves where status = "Refused"', [$id]));
+        $myLeaves = DB::table('leaves')->where('email',$user->email)->get();
+        return view('admin.confirmRequest',['selectedLeave'=>$selectedLeave, 'user'=>$user,'myLeaves'=>$myLeaves ,'totalAcceptedLeave'=>$totalAcceptedLeave, 'totalRefusedLeave'=>$totalRefusedLeave]);
+    }
+    public function respondLeaveRequest($id){
+        $user= Auth::user();
+        $selectedLeave = DB::select('select * from leaves where id = ?',[$id]);
+        $myLeaves = DB::table('leaves')->where('email',$user->email)->get();
+        return view('admin.respondRequest',['selectedLeave'=>$selectedLeave, 'user'=>$user,'myLeaves'=>$myLeaves ]);
+    }
+    public function acceptLeaveRequest($id){
+        DB::update('update leaves set status = "Accepted" where id = ?',[$id]);
+        echo "Record updated successfully.<br/>";
+
+    }
+    public function refuseLeaveRequest($id){
+        DB::update('update leaves set status = "Refused" where id = ?',[$id]);
+        echo "Record updated successfully.<br/>";
+
+    }
 }
